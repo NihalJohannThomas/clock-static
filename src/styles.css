@@ -1,21 +1,88 @@
-* {
-  font-family: Arial, Helvetica, sans-serif;
+html { 
+    background: url(https://media.discordapp.net/attachments/1143850914814361611/1147136453659340861/sL79ATM.jpg?width=1323&height=882) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  body {
+     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+     font-weight: 300;
+      color: #ffffff;
+  }
+  #cal {
+      margin-top: 1%;
+      margin-left: 1%;
+  }
+  #month{
+      font-size:300%;
+      margin-left:1.5%;
+  }
+  #date{
+      font-size:700%;
+  }
+  #year{
+      font-size:300%;
+      margin-left:.5%;
+  }
+  #time{
+      margin-left:34%;
+      font-size: 700%;
+  }
+  #enterFullscreenButton{
+    position: fixed;
+    bottom:2em ;
+    right: 5%;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
-
-html, body {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
+#exitFullscreenButton{
+    position: fixed;
+    bottom:2em ;
+    right: 5%;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
-
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
+@keyframes enterFullscreenAnimation {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
-
-main > h1 {
-  text-align: center;
-  font-size: 3.5em;
+@keyframes exitFullscreenAnimation {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+:fullscreen {
+    animation: enterFullscreenAnimation 0.5s ease-in-out;
+}
+:fullscreen-exit {
+    animation: exitFullscreenAnimation 0.5s ease-in-out;
 }
